@@ -22,11 +22,14 @@ body {
 	padding: 1rem 2rem;
 	width: 40%;
 	border-radius: 10rem 0 0 10rem;
+	display: flex;
+	
 }
 
-#confirm {
+#go {
 	text-transform: uppercase;
-	padding: 1rem 2rem;
+	font-weight: bold;
+	padding: 1rem;
 	border-radius: 0 10rem 10rem 0;
 }
 
