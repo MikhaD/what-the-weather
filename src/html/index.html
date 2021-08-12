@@ -4,12 +4,22 @@
 	<meta charset="UTF-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<script src="script.js" defer></script>
+	<script src="../js/script.js" defer></script>
 	<title>Weather</title>
 </head>
 	<body>
-		<input id="city-input" type="text" placeholder="city">
-		<button id="confirm">Confirm</button>
+		<div id="input">
+			<input id="city-input" type="text" placeholder="city">
+			<button id="confirm">Confirm</button>
+			<form name="units">
+				<input type="radio" name="unit" value="celsius" id="metric" checked>
+				<label for="metric">Metric</label>
+				<input type="radio" name="unit" value="fahrenheit" id="imperial">
+				<label for="imperial">Imperial</label>
+				<input type="radio" name="unit" value="kelvin" id="kelvin">
+				<label for="kelvin">Kelvin</label>
+			</form>
+		</div>
 		<br>
 		<div id="weather-data">
 			<h1 id="city"></h1>

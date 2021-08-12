@@ -9,18 +9,19 @@ confirm.addEventListener("click", onClick);
 
 async function onClick() {
 	try {
-		const data = await fetchWeather(cityInput.value);
-		updateUI(data.name, data.weather[0].main, data.main.temp);
+		const units = document.forms.units.elements.unit.value;
+		const data = await fetchWeather(cityInput.value, units);
+		updateUI(data.name, data.weather[0].main, data.main.temp, units);
 	} catch {
 		clearUI();
 		cityElement.textContent = `Could not find the city of ${cityInput.value}`;
 	}
 }
 
-function updateUI(city, weather, temp) {
+function updateUI(city, weather, temp, units) {
 	cityElement.textContent = city;
 	weatherElement.textContent = `Weather: ${weather}`;
-	temperatureElement.textContent = `Temperature: ${temp}°C`;
+	temperatureElement.textContent = `Temperature: ${temp}°${units.slice(0, 1).toUpperCase()}`;
 	document.title = `${city} Weather`;
 }
 
@@ -32,7 +33,7 @@ function clearUI() {
 
 }
 
-async function fetchWeather(city) {
-	let data = await fetch(`https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${APIKey}&units=metric`);
+async function fetchWeather(city, units) {
+	let data = await fetch(`https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${APIKey}&units=${units}`);
 	return await data.json();
 }
