@@ -1,4 +1,4 @@
-const confirm = document.querySelector("#confirm");
+const confirmBtn = document.querySelector("#go");
 const cityInput = document.querySelector("#city-input");
 const cityElement = document.querySelector("#city");
 const weatherElement = document.querySelector("#weather");
