@@ -1,0 +1,69 @@
+:root {
+	font-size: 10px;
+}
+
+body {
+	font-size: 1.8rem;
+	font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+#input {
+	width: 80vw;
+	background-color: #0b9b77;
+	color: white;
+	border-radius: 0.5rem;
+	padding: 2rem;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+#select-city {
+	width: 100%;
+	display: flex;
+	justify-content: center;
+}
+
+#city-input {
+	width: 40%;
+	border-radius: 10rem 0 0 10rem;
+}
+
+#city-input:focus {
+	outline: none;
+}
+
+#go {
+	text-transform: uppercase;
+	font-weight: bold;
+	color: white;
+	background-color: black;
+	border-radius: 0 10rem 10rem 0;
+	cursor: pointer;
+}
+
+.city {
+	border: none ;
+	font-size: 2rem;
+	padding: 1rem 2rem;
+}
+
+#units {
+	outline: solid white 1px;
+	padding: 0.25rem 0.5rem 0.5rem 0;
+	margin-top: 1rem;
+	border-radius: 0.5rem;
+}
+
+#weather-data {
+	border: solid black 1px;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	border-radius: 0.5rem;
+	width: min(max(40vw, 30rem), 50rem);
+	margin-top: 6rem;
+}

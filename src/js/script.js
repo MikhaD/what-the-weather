@@ -5,7 +5,7 @@ const weatherElement = document.querySelector("#weather");
 const temperatureElement = document.querySelector("#temperature");
 const APIKey = "38c52cc7a11aaf6af93dbe5908f6fd06";
 
-confirm.addEventListener("click", onClick);
+confirmBtn.addEventListener("click", onClick);
 
 async function onClick() {
 	try {
@@ -34,6 +34,7 @@ function clearUI() {
 }
 
 async function fetchWeather(city, units) {
+	console.log(`https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${APIKey}&units=${units}`);
 	let data = await fetch(`https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${APIKey}&units=${units}`);
 	return await data.json();
 }
