@@ -7,6 +7,7 @@ const descEl = weatherElements.querySelector("span");
 const temperatureElement = document.querySelector("#temperature");
 const backgroundElement = document.querySelector("#background");
 const APIKey = "38c52cc7a11aaf6af93dbe5908f6fd06";
+let currentHash;
 
 const symbol = {
 	metric: "C",
@@ -17,16 +18,21 @@ const symbol = {
 confirmBtn.addEventListener("click", onClick);
 
 async function onClick() {
+	if (!cityInput.value) return;
+
 	const city = cityInput.value;
 	cityInput.value = "";
 	try {
 		const units = document.forms.units.elements.unit.value;
 		const data = await fetchWeather(city, units);
+
 		updateUI(data.name, data.weather[0].main, data.weather[0].description, data.main.temp, units);
 		setBackgroundImage(data.name, data.weather[0].main);
+		setHash(city.toLowerCase());
 	} catch {
 		clearUI();
-		cityElement.textContent = `Could not find data forcom ${city}`;
+		cityElement.textContent = `Could not find data for ${city}`;
+		setHash("");
 	}
 }
 
@@ -66,3 +72,22 @@ cityInput.addEventListener("keyup", (e) => {
 		onClick();
 	}
 });
+
+function setHash(value) {
+	currentHash = value;
+	window.location.hash = value;
+}
+
+window.addEventListener("hashchange", (e) => {
+	if (window.location.hash === currentHash || window.location.hash === `#${currentHash}`) return;
+
+	cityInput.value = window.location.hash.slice(1);
+	onClick();
+})
+
+//info ############################################### Routing ###############################################
+
+if (window.location.hash) {
+	cityInput.value = window.location.hash.slice(1);
+	onClick();
+}
