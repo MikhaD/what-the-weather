@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
 	<meta charset="UTF-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -13,30 +14,35 @@
 	<script src="js/script.js" defer></script>
 	<title>Weather</title>
 </head>
-	<body>
-		<h1 id="title">What the Weather</h1>
-		<div id="input">
-			<div id="select-city">
-				<input id="city-input" class="city" type="text" placeholder="city">
-				<button id="go" class="city">Go</button>
-			</div>
-			<form id="units" name="units">
-				<input type="radio" name="unit" value="metric" id="metric" checked>
-				<label for="metric">Metric</label>
-				<input type="radio" name="unit" value="imperial" id="imperial">
-				<label for="imperial">Imperial</label>
-				<input type="radio" name="unit" value="kelvin" id="kelvin">
-				<label for="kelvin">Kelvin</label>
-			</form>
+
+<body>
+	<h1 id="title">What the Weather</h1>
+	<div id="input">
+		<div id="select-city">
+			<input id="city-input" class="city" type="text" placeholder="city">
+			<button id="go" class="city">Go</button>
 		</div>
-		<div id="weather-data">
-			<img id="background" src="">
+		<form id="units" name="units">
+			<input type="radio" name="unit" value="metric" id="metric" checked>
+			<label for="metric">Metric</label>
+			<input type="radio" name="unit" value="imperial" id="imperial">
+			<label for="imperial">Imperial</label>
+			<input type="radio" name="unit" value="kelvin" id="kelvin">
+			<label for="kelvin">Kelvin</label>
+		</form>
+	</div>
+	<div id="weather-data">
+		<img id="background" src="">
+		<div class="location">
 			<h1 id="city"></h1>
-			<div id="weather">
-				<h3></h3>
-				<em><span></span></em>
-			</div>
-			<h3 id="temperature"></h3>
+			<span id="country"></span>
 		</div>
-	</body>
+		<div id="weather">
+			<h3></h3>
+			<em><span></span></em>
+		</div>
+		<h3 id="temperature"></h3>
+	</div>
+</body>
+
 </html>
