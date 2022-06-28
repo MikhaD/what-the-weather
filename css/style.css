@@ -96,6 +96,10 @@ body {
 	align-items: center;
 }
 
+#weather>span {
+	font-style: italic;
+}
+
 #weather * {
 	margin: 0;
 }
